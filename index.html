@@ -12,30 +12,98 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/index.css">
+
+        <script src="js/vendor/jquery-1.11.3.min.js"></script>
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+        <!--<script src="js/open-slide-image-0.2.js"></script>-->
+        <script src="js/open-slide-image-0.2.7.js"></script>
+
+        <script src="js/index.js"></script>
+
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <div id="wrap">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/{{JQUERY_VERSION}}/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+            <div class="osi-canvas">
+
+            </div>
+            <!--<img class="bg" src="img/background.jpg" width="100%" height="100%">-->
+
+            <div id="header">
+                <img src="img/profile_logo.jpg">
+                <span class="menu"> About </span>
+                <span class="menu"> History </span>
+                <span class="menu"> Board </span>
+                <span class="menu"> Post </span>
+                <span class="menu"> Project </span>
+                <span class="menu"> Lab </span>
+            </div>
+
+            <div id="container">
+
+                <div class="node am" style="width:240px;height:270px;">
+                    &nbsp;&nbsp;&nbsp;<span style="font-size:60px">A</span>bout Me
+                </div>
+
+                <div class="node mhistory" style="width:180px;height:270px;text-align: right">
+                    <div style="background:url(img/history.jpg); width:180px; height : 200px;float:left;"></div>
+                    <span style="font-size:50px;">H</span>istory &nbsp;&nbsp;
+                </div>
+
+                <div class="node board" style="width:180px;height:210px;text-align:center">
+                    <span style="font-size:35px;line-height: 210px;">B</span>oard
+                </div>
+
+                <div class="node logo" style="line-height:20px;font-size : 12pt; text-align : center; width:450px;height:450px; background : url(img/logo.jpg);">
+                    <div style="margin-top : 300px;">
+                        <span style="background:url(img/micon.jpg);width:50px;height:50px;border-radius:50px;display:inline-block;"></span> </br>
+                        <span style="font-size:35px">T</span>his web site is built on Node.js, jQuery and OpenSlideImg. </br>
+                        © 2015 Powered by BlueNebula | kiwlgus1@korea.ac.kr
+                    </div>
+                </div>
+
+                <div class="node lab" style="width:120px;height:150px;">
+                    &nbsp;&nbsp;<span style="font-size:40px;line-height: 210px;">L</span>ab
+                </div>
+
+                <div class="node project" style="width:300px;height:150px; text-align:right">
+                    <div style="background:url(img/project.jpg); width:300px; height : 90px;float:left;"></div>
+                    <span style="font-size:40px;">P</span>roject &nbsp;&nbsp;
+                </div>
+
+                <div class="node posting" style="width:180px;height:210px;text-align:center">
+                    <span style="font-size:35px;line-height: 210px;">P</span>ost
+                </div>
+
+
+            </div>
+
+
+            <div id="footer">
+
+            </div>
+
+
+        </div>
+
+
+        <!--<script src="js/plugins.js"></script>-->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
+        <!--<script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='https://www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
+        </script>-->
 
 
 

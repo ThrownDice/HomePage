@@ -1,0 +1,138 @@
+/*index.css
+-------------------------------------------------------------*/
+
+/*external font family
+-------------------------------------------------------------*/
+/* font-family: 'News Cycle', sans-serif; */
+@import url(http://fonts.googleapis.com/css?family=News+Cycle:400,700&subset=latin,latin-ext);
+/* font-family: 'Yanone Kaffeesatz', sans-serif; */
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700,400,300,200);
+
+/*default tag style
+-------------------------------------------------------------*/
+body{
+    overflow : hidden;
+}
+
+.osi-canvas{
+    position : absolute;
+}
+
+/*header
+-------------------------------------------------------------*/
+#header{
+    position : fixed;
+    width : 100%;
+    height : 50px;
+    background : white;
+    line-height: 50px;
+    overflow : hidden;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight : 300;
+    /*background : url(../img/header-blue-bar.gif);*/
+}
+
+#header .menu{
+    width : 100px;
+    display : inline-block;
+    text-align : center;
+    cursor : pointer;
+    color : dimgray;
+}
+
+#header .menu:hover{
+    color : black;
+}
+
+
+/*container
+-------------------------------------------------------------*/
+
+/*footer
+-------------------------------------------------------------*/
+
+
+/*for test
+-------------------------------------------------------------*/
+
+/* color set
+F58033
+FFB482
+FF8635
+7F5A41
+CC6B2A
+
+B25600
+FF8919
+FF7B00
+008EB2
+00CAFF
+*/
+
+#container{
+    width : 1140px;
+    height : 450px;
+    position : absolute;
+    display : none;
+}
+
+#container .node{
+    color : white;
+    float : left;
+    opacity : 0.8;
+    font-family: 'News Cycle', sans-serif;
+    font-size : 28px;
+}
+
+.am{
+    background : #B25600;
+}
+
+.mhistory{
+    background : #FF8919;
+}
+
+.board{
+    background : #FF7B00;
+}
+
+.logo{
+    background : #008EB2;
+}
+
+.lab{
+    background : #00CAFF;
+}
+
+.project{
+    background : #FF8635;
+}
+
+.posting{
+    background : #F58033;
+}
+
+#container .node:hover{
+    opacity : 1.0;
+}
+
+#container .padding{
+    width : 30px;
+    height : 30px;
+    float : left;
+}
+
+.bg{
+    position : absolute;
+    left : 0;
+    top : 0;
+    z-index : -1;
+}
+
+.square{
+    width : 30px;
+    height : 30px;
+}
+
+.white{background : white;}
+.black{background : black;}
