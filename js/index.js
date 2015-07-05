@@ -4,6 +4,10 @@
 (function(window, document, SlideMgr){
 
     var controller = {};
+    var scroll = {};
+    scroll.value = 0;
+    scroll.max = 100;
+    scroll.min = 0;
 
     controller.initialize = function(){
         controller.container.initialize();
@@ -13,6 +17,54 @@
     controller.container = {};
     controller.footer = {};
 
+    //header controller
+    //------------------------------------------------
+    controller.header.status = {
+        WHITE : 'white',
+        BLACK : 'black',
+        CURRENT : 'white'
+    };
+
+    controller.header.toggle = function(){
+        var w_header = $('#header');
+        var b_header = $('#_header');
+        switch(controller.header.status.CURRENT){
+            case 'white' :
+                w_header.fadeOut(1000);
+                b_header.css('display','block').animate({
+                    opacity : 0.75
+                },1000);
+                controller.header.status.CURRENT = 'black';
+                break;
+            case 'black' :
+                w_header.fadeIn(1000);
+                b_header.fadeOut(1000);
+                controller.header.status.CURRENT = 'white';
+                break;
+        }
+    };
+
+
+    controller.header.show = function(){
+        $('#header').animate({
+            top : 0
+        },1000);
+        $('#_header').animate({
+            top : 0
+        },1000);
+    };
+
+    controller.header.hide = function(){
+        $('#header').animate({
+           top : -1000
+        },1000);
+        $('#_header').animate({
+            top : -1000
+        },1000);
+    };
+
+    //container controller
+    //------------------------------------------------
     controller.container.initialize = function(){
 
         controller.container.nodeCoordinate = [];
@@ -69,6 +121,14 @@
         }
     };
 
+    controller.container.hide = function(){
+        $('#container').fadeOut(1000);
+    };
+
+    controller.container.show = function(){
+        $('#container').fadeIn(1000);
+    };
+
     $(function(){
 
         controller.initialize();
@@ -77,8 +137,34 @@
             controller.container.arrangePosition();
         });
 
-        var $canvas = $('.osi-canvas');
+        addWheelListener(document.body, function(event){
 
+            var flag = 0; // 1:hide, -1:show, 0:nothing
+
+            if(!scroll.value && event.deltaY > 0){
+                flag = 1;
+            }
+
+            if(event.deltaY > 0 && scroll.value != scroll.max){
+                scroll.value++;
+            }else if(event.deltaY < 0 && scroll.value != scroll.min){
+                scroll.value--;
+                if(!scroll.value) flag = -1;
+            }
+
+            //console.log('scroll value : ' + scroll.value);
+
+            if(flag == 1){
+                controller.header.toggle();
+                controller.container.hide();
+            }else if(flag == -1){
+                controller.header.toggle();
+                controller.container.show();
+            }
+
+        });
+
+        var $canvas = $('.osi-canvas');
         $canvas.width(window.screen.availWidth).height(window.screen.availHeight);
 
         SlideMgr.setConfig({
